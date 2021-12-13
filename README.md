@@ -15,7 +15,7 @@ First, clone this repo with git or download it as a zip using the "Code" button 
 
 Download with git:
 ```bash
-git clone https://github.com/asmithdt/docker-nginx-problem.git
+git clone https://github.com/asmithdt/sample-problems.git
 ```
 
 If you chose to download the zip, please extract it somewhere.
