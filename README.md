@@ -66,4 +66,5 @@ program1.exe
 
 ## Notes
 
-These applications don't actually do anything, even though they log as if they might be taking real actions it's just smoke and mirrors for this learning exercise.
+* These applications don't actually do anything, even though they log as if they might be taking real actions it's just smoke and mirrors for this learning exercise.
+* These programs will always appear to error and cannot be fixed - the exercise is only to diagnose what the problems might be and not to fix them.
