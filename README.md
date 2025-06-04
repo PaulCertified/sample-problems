@@ -1,70 +1,66 @@
-# Sample problems
+# Sample Problem Diagnostic Exercise
 
-This repo contains 2 sample programs which are exiting with an error during startup. Please diagnose why this might be happening and write a short summary with as much detail as you can.
+## Paul Gipson - Technical Diagnostic Analysis
 
-## Setup
+### Overview
 
-The easiest way to run this is using docker;
+This repository contains my comprehensive technical diagnostic analysis of two sample applications designed to simulate common startup failures. It demonstrates my systematic troubleshooting methodology, attention to detail, and ability to infer architectural patterns from limited information.
 
-* On Mac/Windows please download Docker Desktop from here: https://www.docker.com/products/docker-desktop
-    * Docker Desktop will run through the installation, on Windows please note that there may be an extra step required after you've rebooted
+### Project Background
 
-## Instructions
+I was presented with a technical challenge: diagnose why two compiled applications consistently fail on startup without having access to the source code. This simulates a common scenario in production environments where applications fail and engineers must determine the root cause through logs, error messages, and environmental analysis.
 
-First, clone this repo with git or download it as a zip using the "Code" button in GitHub.
+### Diagnostic Approach
 
-Download with git:
-```bash
-git clone https://github.com/asmithdt/sample-problems.git
-```
+My approach to diagnosing complex technical issues follows a systematic methodology:
 
-If you chose to download the zip, please extract it somewhere.
+1. **Structured Analysis**: I developed a step-by-step diagnostic plan to methodically isolate the variables and potential failure points.
 
-Open Command Prompt (Windows) or Terminal (Mac) and change into the directory with the Dockerfile (this repo).
+2. **Iterative Testing**: I ran each application both with and without debug mode to compare behavior and gather more detailed diagnostic information.
 
-To build + start the application using docker;
+3. **Evidence-Based Reasoning**: Each conclusion is supported by specific log entries and error messages, with clear linkage between observations and root causes.
 
-```bash
-docker build -t sample-problems .
-docker run -it sample-problems program1
-docker run -it sample-problems program2
-```
+4. **Architectural Inference**: By analyzing application behavior, I reconstructed the likely architecture and dependencies without access to source code.
 
-If you are unable to get docker working, please use the binaries provided directly;
+### Key Findings
 
-* program1.exe - Windows
-* program1_darwin_amd64 - Mac
-* program1_linux_amd64 - Linux
-* program2.exe - Windows
-* program2_darwin_amd64 - Mac
-* program2_linux_amd64 - Linux
+My investigation determined that:
 
-In order to debug this application you will need to know the environment variable you can provide to enable debug logging;
+- **Program 1** fails due to a port binding conflict on port 6000, demonstrating issues with hardcoded resource requirements and inflexible configuration.
 
-* `PROGRAM_DEBUG=true`
-    * This will enable debug/trace logging from the application
+- **Program 2** fails due to PostgreSQL database connection timeouts, illustrating challenges in distributed system dependencies and connection management.
 
-To supply an environment variable using docker;
+Both programs exhibited similar limitations in error reporting and graceful degradation, but failed for fundamentally different reasons at different points in their startup sequence.
 
-```bash
-docker run -e PROGRAM_DEBUG=true -it sample-problems program1
-```
+### Technical Documents
 
-To supply an environment variable using Mac/Windows (**when using binaries only**);
+This repository includes:
 
-Mac:
-```bash
-export PROGRAM_DEBUG=true
-./program1_darwin_amd64
-```
+- **Final Report**: A professional-grade analysis suitable for technical stakeholders ([finalreport.md](finalreport.md))
+- **Diagnostic Plan**: My original structured approach to problem solving ([plan.md](plan.md))
+- **Detailed Steps**: Documentation of each investigative step ([step1.md](step1.md) through [step9.md](step9.md))
 
-Windows:
-```
-set PROGRAM_DEBUG=true
-program1.exe
-```
+### Skills Demonstrated
 
-## Notes
+This exercise showcases my technical capabilities in:
 
-* These applications don't actually do anything, even though they log as if they might be taking real actions it's just smoke and mirrors for this learning exercise.
-* These programs will always appear to error and cannot be fixed - the exercise is only to diagnose what the problems might be and not to fix them.
+- **Methodical Troubleshooting**: Following a systematic process to isolate and identify issues
+- **Technical Documentation**: Creating clear, well-organized documentation of findings
+- **System Architecture**: Inferring system design and dependencies from behavioral analysis
+- **Docker Container Usage**: Utilizing containerization for controlled testing environments
+- **Log Analysis**: Extracting meaningful insights from application logs and error messages
+- **Root Cause Analysis**: Distinguishing symptoms from underlying issues
+
+### Professional Application
+
+The diagnostic patterns demonstrated here apply directly to real-world scenarios including:
+
+- Troubleshooting microservice startup failures
+- Diagnosing resource conflicts in container deployments
+- Identifying network connectivity issues in distributed systems
+- Analyzing dependency failures in complex application stacks
+
+---
+
+*Paul Gipson - Technical Diagnostics Specialist*
+
